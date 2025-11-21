@@ -16,12 +16,6 @@
 #define PADDED_LEN(len) \
 ((size_t)(((len) + MD4_MIN_EXTRA_BYTES + 63) / 64) * 64)
 
-#define le32(ptr) \
-((uint32_t)(ptr)[0]       | \
-((uint32_t)(ptr)[1] << 8) | \
-((uint32_t)(ptr)[2] << 16)| \
-((uint32_t)(ptr)[3] << 24))
-
 #define f(x,y,z) (((x) & (y)) | (~(x) & (z)))
 #define g(x,y,z) (((x) & (y)) | ((x) & (z)) | ((y) & (z)))
 #define h(x,y,z) ((x) ^ (y) ^ (z))

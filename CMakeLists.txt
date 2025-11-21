@@ -3,7 +3,12 @@ project(sha256 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_library(sha256 STATIC library.c
+add_library(lib STATIC library.c
         md4.h
         md4.c
-        test.c)
+        md5.c
+        md5.h
+        myendian.h)
+
+add_executable(sha256 test.c)
+target_link_libraries(sha256 PRIVATE lib)

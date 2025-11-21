@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include <string.h>
 
+#include "myendian.h"
+
 int pad_message(const uint8_t *in, const size_t len, uint8_t *out, size_t *out_len) {
     if (!in || !out || !out_len) return -1;
 
